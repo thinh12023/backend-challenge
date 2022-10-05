@@ -1,15 +1,14 @@
 
 
 
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { UserGender } from 'src/common/enum';
 
-export class CreateUserDto {
+export class CreateSuperEmployeeDto {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  fullName: string;
+  name: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -23,8 +22,8 @@ export class CreateUserDto {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  email: string;
+  @IsNumber()
+  companyId: number;
 
 }
 

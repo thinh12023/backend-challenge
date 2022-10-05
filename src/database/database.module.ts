@@ -11,7 +11,6 @@ import { ConfigService } from "src/shared/config.service";
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-
         host: configService.db.host,
         port: configService.db.port,
         username: configService.db.user,
@@ -19,7 +18,7 @@ import { ConfigService } from "src/shared/config.service";
         database: configService.db.name,
 
         entities: [__dirname + '/entities/*.entity.{ts,js}'],
-        logging: false,
+        logging: true,
         synchronize: true,
         migrationsRun: true,
         migrationsTransactionMode: 'each',
