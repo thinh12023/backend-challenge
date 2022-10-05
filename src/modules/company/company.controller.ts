@@ -26,7 +26,7 @@ export class CompanyController {
     @Body() company: CreateCompanyDto
   ): Promise<ResultCreateCompanyDto> {
     await this.userService.fakeAuthen(+userId, this.authenRole);
-    return await this.companyRepository.createCompany(company, userId);
+    return await this.companyRepository.createCompany(company);
   }
 
   @Post('/add-admin')

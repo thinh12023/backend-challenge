@@ -6,12 +6,4 @@ import { Users } from './users.entity';
 export class Company extends CustomBaseEntity {
   @Column()
   name: string;
-
-  @Column()
-  userId: number;
-
-  @ManyToOne(type => Users)
-  @JoinColumn({name:'userId'})
-  user: Users;
-
 }

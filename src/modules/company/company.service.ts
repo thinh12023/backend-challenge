@@ -38,9 +38,8 @@ export class CompanyService {
     return await this.companyRepository.findOne({where:{id}})
   }
 
-  async createCompany(company: CreateCompanyDto, userId: number): Promise<ResultCreateCompanyDto>{
-    const mergeData = {...company, userId }
-    const createCompany = await this.companyRepository.create(mergeData);
+  async createCompany(company: CreateCompanyDto): Promise<ResultCreateCompanyDto>{
+    const createCompany = await this.companyRepository.create(company);
     const createCompanyResult = await this.companyRepository.save(createCompany);
 
     // create default admin
