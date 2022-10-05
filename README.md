@@ -16,5 +16,8 @@ $ yarn start:dev
 
 # production mode
 $ yarn start:prod
+
+#With docker
+$ docker-compose up -d
 ```
 
