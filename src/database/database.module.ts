@@ -20,7 +20,7 @@ import { ConfigService } from "src/shared/config.service";
         entities: [__dirname + '/entities/*.entity.{ts,js}'],
         logging: true,
         synchronize: true,
-        migrationsRun: true,
+        migrationsRun: false,
         migrationsTransactionMode: 'each',
         migrations: [__dirname + '/migrations/*.{ts,js}'],
       }),
